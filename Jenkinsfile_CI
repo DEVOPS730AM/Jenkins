@@ -1,4 +1,5 @@
 pipeline{
+    properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '1', numToKeepStr: '1')), pipelineTriggers([cron('* * * * *')])])
     agent any
     stages {
        stage('clone'){
