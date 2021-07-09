@@ -16,7 +16,7 @@ pipeline{
        }
        stage('nexus'){
           steps {
-          nexusArtifactUploader artifacts: [[artifactId: 'ram', classifier: '', file: 'target/sparkjava-hello-world-1.0', type: 'war']], credentialsId: 'ram_nexus', groupId: 'ram', nexusUrl: '34.224.94.27:8081/nexus/', nexusVersion: 'nexus2', protocol: 'http', repository: 'ram', version: '$BUILD_NUMBER'
+          nexusArtifactUploader artifacts: [[artifactId: 'ram', classifier: '', file: 'target/sparkjava-hello-world-1.0.war', type: 'war']], credentialsId: 'ram_nexus', groupId: 'ram', nexusUrl: '34.224.94.27:8081/nexus/', nexusVersion: 'nexus2', protocol: 'http', repository: 'ram', version: '$BUILD_NUMBER'
           }
        }
     }
