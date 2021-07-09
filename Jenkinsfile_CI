@@ -1,0 +1,15 @@
+pipeline{
+    agent any
+    stages {
+       stage('clone'){
+          steps {
+          checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/kliakos/sparkjava-war-example.git']]])
+          }
+       }
+       stage('Build'){
+          steps {
+          sh 'mvn package'
+          }
+       }
+    }
+}
