@@ -1,0 +1,8 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: deploy war file
+    get_url:
+      url: http://34.202.234.33:8081/nexus/service/local/repositories/ram/content/java/sparkjava-hello-world/1.0.0/sparkjava-hello-world-1.0.0.war
+      dest: /usr/share/tomcat/webapp
